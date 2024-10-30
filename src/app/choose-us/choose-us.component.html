@@ -1,0 +1,40 @@
+<div class="mt-24 container mx-auto px-4">
+    <div class="flex flex-wrap items-center">
+        <div class="w-full lg:w-1/2 mb-8 lg:mb-0">
+            <div class="relative lg:mr-6">
+                <img src="assets/choose-us.png" class="w-full rounded-md">
+            </div>
+        </div>
+
+        <div class="w-full lg:w-1/2">
+            <div class="lg:ml-6 space-y-6">
+                <span class="text-primary uppercase font-semibold text-xl">WHY CHOOSE US</span>
+                <h2 class="text-4xl font-bold text-slate-800">Our Company Has Been Working Very Faithfully</h2>
+                <p class="text-slate-700">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis placerat arcu nibh sed placerat
+                    elementum. Urna eu et purus et mi sit rhoncus. Id nisl quis arcu nulla leo.
+                </p>
+
+                <div class="flex flex-wrap">
+                    <div class="w-full sm:w-1/2 mb-6 sm:mb-0">
+                        <ul class="space-y-4 text-slate-700">
+                            <li *ngFor="let elem of data[0]" class="flex items-center p-2 shadow-lg">
+                                <svg class="text-primary mr-2" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m11.602 13.76l1.412 1.412l8.466-8.466l1.414 1.415l-9.88 9.88l-6.364-6.365l1.414-1.414l2.125 2.125zm.002-2.828l4.952-4.953l1.41 1.41l-4.952 4.953zm-2.827 5.655L7.364 18L1 11.636l1.414-1.414l1.413 1.413l-.001.001z"/></svg>
+                                {{elem}}
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="w-full sm:w-1/2">
+                        <ul class="space-y-4 text-slate-700">
+                            <li *ngFor="let elem of data[1]" class="flex items-center p-2 shadow-lg">
+                                <svg class="text-primary mr-2" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m11.602 13.76l1.412 1.412l8.466-8.466l1.414 1.415l-9.88 9.88l-6.364-6.365l1.414-1.414l2.125 2.125zm.002-2.828l4.952-4.953l1.41 1.41l-4.952 4.953zm-2.827 5.655L7.364 18L1 11.636l1.414-1.414l1.413 1.413l-.001.001z"/></svg>
+                                {{elem}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

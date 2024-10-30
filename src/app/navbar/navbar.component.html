@@ -1,0 +1,85 @@
+<nav class="bg-white p-4">
+    <div [ngClass]="{'border-b': isMobileMenuOpen, 'lg:border-b-0': true}" class="container mx-auto flex items-center justify-between pb-3 border-gray-200">
+        <div class="text-4xl font-bold text-primary">Logo</div>
+
+        <div class="hidden lg:block relative w-64 mx-3">
+            <input type="text" placeholder="Search here..."
+                class="w-full border-b border-gray-300 placeholder-gray-500 text-gray-700 focus:outline-none focus:border-primary">
+        </div>
+
+        <div class="hidden lg:flex items-center space-x-6">
+            <ul class="flex space-x-6 text-gray-600">
+                <li *ngFor="let elem of menus" class="relative flex items-center hover:text-primary">
+                    <a href="#">{{elem}}</a>
+                    <span class="ml-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                            <g fill="none" fill-rule="evenodd">
+                                <path
+                                    d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                                <path fill="currentColor"
+                                    d="M13.06 16.06a1.5 1.5 0 0 1-2.12 0l-5.658-5.656a1.5 1.5 0 1 1 2.122-2.121L12 12.879l4.596-4.596a1.5 1.5 0 0 1 2.122 2.12l-5.657 5.658Z" />
+                            </g>
+                        </svg>
+                    </span>
+                </li>
+                <li class="relative group hover:text-primary">
+                    <a href="#">Contact Us</a>
+                </li>
+            </ul>
+
+            <div class="flex items-center space-x-2 text-gray-600">
+                <svg class="text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M9.366 10.682a10.56 10.56 0 0 0 3.952 3.952l.884-1.238a1 1 0 0 1 1.294-.296a11.4 11.4 0 0 0 4.583 1.364a1 1 0 0 1 .921.997v4.462a1 1 0 0 1-.898.995Q19.307 21 18.5 21C9.94 21 3 14.06 3 5.5q0-.807.082-1.602A1 1 0 0 1 4.077 3h4.462a1 1 0 0 1 .997.921A11.4 11.4 0 0 0 10.9 8.504a1 1 0 0 1-.296 1.294zm-2.522-.657l1.9-1.357A13.4 13.4 0 0 1 7.647 5H5.01Q5 5.25 5 5.5C5 12.956 11.044 19 18.5 19q.25 0 .5-.01v-2.637a13.4 13.4 0 0 1-3.668-1.097l-1.357 1.9a12.5 12.5 0 0 1-1.588-.75l-.058-.033a12.56 12.56 0 0 1-4.702-4.702l-.033-.058a12.4 12.4 0 0 1-.75-1.588"/></svg>
+                <span>+(111) 65 458 856</span>
+            </div>
+
+            <button class="flex items-center bg-primary text-white p-4 rounded-md">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m15.728 9.576l-1.414-1.414L5 17.476v1.414h1.414zm1.414-1.414l1.414-1.414l-1.414-1.414l-1.414 1.414zm-9.9 12.728H3v-4.243L16.435 3.212a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414z"/></svg>
+                Get A Quote
+            </button>
+        </div>
+
+        <div class="lg:hidden flex items-center space-x-2">
+            <div class="relative w-40">
+                <input type="text" placeholder="Search here..."
+                    class="w-full border-b border-gray-300 placeholder-gray-500 text-gray-700 focus:outline-none focus:border-primary">
+            </div>
+
+            <button (click)="toggleMenu()" class="text-gray-700 size-8 hover:text-primary focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div [ngClass]="{'hidden': !isMobileMenuOpen, 'block': isMobileMenuOpen}" class="lg:hidden mt-4 space-y-4">
+        <ul class="space-y-3 text-gray-600 text-lg">
+            <li *ngFor="let elem of menus" class="flex items-center hover:text-primary">
+                <a href="#">{{elem}}</a>
+                <span class="ml-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                        <g fill="none" fill-rule="evenodd">
+                            <path
+                                d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                            <path fill="currentColor"
+                                d="M13.06 16.06a1.5 1.5 0 0 1-2.12 0l-5.658-5.656a1.5 1.5 0 1 1 2.122-2.121L12 12.879l4.596-4.596a1.5 1.5 0 0 1 2.122 2.12l-5.657 5.658Z" />
+                        </g>
+                    </svg>
+                </span>
+            </li>
+            <li class="hover:text-primary">Contact Us</li>
+        </ul>
+        <div class="mt-4 space-y-4 text-gray-600">
+            <div class="flex items-center space-x-2">
+                <svg class="text-primary" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M9.366 10.682a10.56 10.56 0 0 0 3.952 3.952l.884-1.238a1 1 0 0 1 1.294-.296a11.4 11.4 0 0 0 4.583 1.364a1 1 0 0 1 .921.997v4.462a1 1 0 0 1-.898.995Q19.307 21 18.5 21C9.94 21 3 14.06 3 5.5q0-.807.082-1.602A1 1 0 0 1 4.077 3h4.462a1 1 0 0 1 .997.921A11.4 11.4 0 0 0 10.9 8.504a1 1 0 0 1-.296 1.294zm-2.522-.657l1.9-1.357A13.4 13.4 0 0 1 7.647 5H5.01Q5 5.25 5 5.5C5 12.956 11.044 19 18.5 19q.25 0 .5-.01v-2.637a13.4 13.4 0 0 1-3.668-1.097l-1.357 1.9a12.5 12.5 0 0 1-1.588-.75l-.058-.033a12.56 12.56 0 0 1-4.702-4.702l-.033-.058a12.4 12.4 0 0 1-.75-1.588"/></svg>
+                <span>+123 456 789</span>
+            </div>
+            <button class="flex items-center bg-primary text-white px-4 py-2 rounded-full w-full justify-center">
+                <i class="ri-pencil-line mr-2"></i>
+                Get A Quote
+            </button>
+        </div>
+    </div>
+</nav>

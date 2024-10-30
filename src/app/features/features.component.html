@@ -1,0 +1,51 @@
+<div class="mt-20">
+    <p class="text-primary uppercase font-semibold text-center">Our Features</p>
+    <p class="text-4xl capitalize text-slate-800 font-bold text-center">Better Digital Insurance Begins Right Here</p>
+    <div class="flex flex-wrap gap-4 justify-center m-8">
+        <div *ngFor="let elem of data;" class="w-72">
+            <div>
+                <img [src]="elem.image" alt="">
+            </div>
+            <p class="font-semibold text-xl my-4">{{elem.text}}</p>
+            <p class="text-gray-800">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis placerat arcu nibh sed.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="mx-16 mt-24 flex flex-col md:flex-row-reverse gap-4">
+    <div class="flex flex-col md:flex-row flex-wrap items-center gap-4">
+        <div class="w-[calc(50%-1rem)] hidden md:block">
+            <div>
+                <img class="rounded-md" src="assets/family-child.png">
+            </div>
+            <div class="mt-4">
+                <img class="rounded-md" src="assets/car.png">
+            </div>
+        </div>
+        <div class="md:hidden w-[calc(100%-1rem)] flex justify-center">
+            <img class="rounded-md" src="assets/family-child.png">
+        </div>
+        <div class="mt-4 md:hidden w-[calc(100%-1rem)] flex justify-center">
+            <img class="rounded-md" src="assets/car.png">
+        </div>
+        <div class="w-[calc(100%-1rem)] md:w-[calc(50%-1rem)] flex justify-center md:block">
+            <img class="rounded-md" src="assets/happy-family.png">
+        </div>
+    </div>
+    <div>
+        <p class="text-primary uppercase font-semibold">About Incep</p>
+        <p class="text-4xl capitalize text-slate-800 font-bold">Life Insurance That Creates Wealth For Everyone</p>
+        <div class="flex p-4 shadow-lg" *ngFor="let elem of about;">
+            <div class="size-24">
+                <img [src]="elem.image">
+            </div>
+            <div class="grid columns-2 content-center">
+                <p class="text-xl text-slate-800 font-bold">{{elem.text}}</p>
+                <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis placerat arcu
+                    nibh sed sit amet, consectetur adipiscing</p>
+            </div>
+        </div>
+    </div>
+</div>
